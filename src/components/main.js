@@ -3,7 +3,6 @@ import SelectForm from './selectform'
 import {API} from '../api/index';
 
 
-
 const Main = () => {
 
     const [places, getPlaces] = useState('');
@@ -15,7 +14,6 @@ const Main = () => {
 
     useEffect(() => {
         getAllPlaces()
-        // console.log(places);
     }, []);
 
     return (
