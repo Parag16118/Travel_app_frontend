@@ -8,6 +8,7 @@ const Renderpath = (props) => {
 
     return (
         <div class="container">
+            <h4>Your Travel Plan</h4>
             {list.map((item) => {
 
                 let hh=parseInt(item.duration/60);
@@ -15,7 +16,7 @@ const Renderpath = (props) => {
                 return (
 
                     <li key={item.id}>
-                        {item.start} to {item.end} from {item.transport} having cost:{item.price} EUR for duration: {hh} hrs {(mm==0)?"":<span>{mm} mins</span>}
+                        {item.start} to {item.end} from {item.transport} having cost:{item.price} EUR for duration: {hh} hrs {(mm==0)?"":<span>{mm} min</span>}
                     </li>
                     
                 );

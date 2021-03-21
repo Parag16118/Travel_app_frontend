@@ -50,7 +50,9 @@ export default function SelectForm(props) {
   for(let i=0;i<places.length;i++){
     placename.push({id:places[i].id,name:places[i].name});
   }
-
+  placename.sort((a,b)=>{
+    return a.id-b.id
+  })
   var Route=[];
 
   if(data){
@@ -177,7 +179,7 @@ export default function SelectForm(props) {
         <FormControlLabel value="True" control={<Radio />} label="Cheapest" />
       </RadioGroup>
 
-      <Button  variant="contained" color="primary" size="large" type="submit">Submit</Button>
+      <Button  variant="contained" color="primary" size="large" type="submit">Find Route</Button>
 
      </form>
 
@@ -188,9 +190,10 @@ export default function SelectForm(props) {
           {
             (!data)?"":(data.type==="Cheapest")?
 
-            <h2 className="mt-2">Total amount with Discount: {data.total} EUR </h2> 
+            <h2 className="mt-2">Total amount with Discounts: {data.total} EUR </h2>
+            
             :
-            <h2 className="mt-2">Total time : {hh} hrs {(mm==0)?"":<span>{mm} mins</span>} </h2>
+            <h2 className="mt-2">Total time : {hh} hrs {(mm==0)?"":<span>{mm} min</span>} </h2>
 
           }
         </div>
